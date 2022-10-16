@@ -6,7 +6,20 @@ Simple when block
 ((/when))
 .
 <p v-if="dragons">
-<em>content</em>
+<p><em>content</em></p>
 </p>
 .
 
+When block with multiple paragraphs
+.
+((when dragons))
+*content*
+
+another **paragraph**
+((/when))
+.
+<p v-if="dragons">
+<p><em>content</em></p>
+<p>another <strong>paragraph</strong></p>
+</p>
+.
