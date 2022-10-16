@@ -4,10 +4,20 @@
   "description": "Plugin to add conditional text rendering to markdown-it markdown parser",
   "repository": "jrutila/markdown-it-ehen",
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Juho Rutila",
   "scripts": {
     "lint": "eslint",
-    "test": "mocha -r ts-node/register test/*.ts"
+    "test": "mocha -r ts-node/register test/*.ts",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
+  "files": ["dist/**/*"],
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
