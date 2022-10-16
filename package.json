@@ -5,7 +5,8 @@
   "repository": "jrutila/markdown-it-ehen",
   "license": "MIT",
   "scripts": {
-    "test": ""
+    "lint": "eslint",
+    "test": "mocha -R spec"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -13,6 +14,8 @@
     "markdown"
   ],
   "devDependencies": {
+    "eslint": "^8.25.0",
+    "markdown-it-testgen": "^0.1.6",
+    "mocha": "^10.1.0"
   }
 }
-

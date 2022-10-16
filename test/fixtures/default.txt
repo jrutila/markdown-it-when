@@ -1,0 +1,12 @@
+
+Simple when block
+.
+((when dragons))
+*content*
+((/when))
+.
+<p v-if="dragons">
+<em>content</em>
+</p>
+.
+
