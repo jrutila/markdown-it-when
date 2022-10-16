@@ -11,7 +11,7 @@ And here, too.
 ((/when))
 ```
 
-Now you can override `when_open` and `when_close` blocks and inline blocks to achieve something like this in Vue:
+Now you can override `when_open`, `when_close`, `when_block_open` and `when_block_close` blocks and inline blocks to achieve something like this in, for example, Vue:
 ```html
 Here be <span v-if="dragons"><em>dragons</em> or </span>other creatures.
 
@@ -35,8 +35,15 @@ var md = require('markdown-it')()
 Options:
 - __options:__:
     - __phrases__ - optional, what words are supported, default: `[ 'when', 'until' ]`
-    - __startRegex__ - optional, the regex for the start tag, default: `'\\(\\($0 (.*?)\\)\\)'` matches anything like `((phrase anything))`. The `$0`is replaced with any of the phrases
-    - __endReges__ -optional, the regex for the end tag, default: `'\\(\\(\\/$0\\)\\)'`, matches anything like `((/phrase))`
+    - __startRegex__ - optional, the regex for the start tag, default: `'\\(\\($0 ([^)]*?)\\)\\)'` matches anything like `((phrase anything))`. The `$0`is replaced with any of the phrases
+    - __endRegex__ - optional, the regex for the end tag, default: `'\\(\\(\\/$0\\)\\)'`, matches anything like `((/phrase))`
+    - __whenBlockOpen__ - optional, the render function for when open block, NOTE! There's no good default rendered implemented, you have to provide something
+    - __whenBlockClose__ - optional, the render function for when close block, NOTE! There's no good default rendered implemented, you have to provide something
+    - __whenOpen__ - optional, the render function for when open inline, NOTE! There's no good default rendered implemented, you have to provide something
+    - __whenClose__ - optional, the render function for when close inline, NOTE! There's no good default rendered implemented, you have to provide something
+
+## Contributing
+Please contribute. Check out the `test/fixtures/default.txt` file for the test cases. Create a test case following the [markdown-it-testgen](https://github.com/markdown-it/markdown-it-testgen) format. Then implement the feature and create a pull request.
     
- ## License
+## License
  MIT (see LICENSE file)
