@@ -9,10 +9,17 @@ describe('default when', () => {
               .use(when, {
                 whenBlockOpen: function (tokens, idx, _options, env, slf) {
                   const token = tokens[idx]
-                  return `<p v-if="${token.meta.param}">\n`
+                  return `<p ${token.meta.phrase}="${token.meta.param}">\n`
                 },
                 whenBlockClose: function (tokens, idx, _options, env, slf) {
                   return `</p>\n`
+                },
+                whenOpen: function (tokens, idx, _options, env, slf) {
+                  const token = tokens[idx]
+                  return `<span ${token.meta.phrase}="${token.meta.param}">`
+                },
+                whenClose: function (tokens, idx, _options, env, slf) {
+                  return `</span>`
                 }
               })
 
