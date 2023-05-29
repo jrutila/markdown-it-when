@@ -1,6 +1,7 @@
 {
   "name": "markdown-it-when",
   "version": "1.0.0",
+  "type": "module",
   "description": "Plugin to add conditional text rendering to markdown-it markdown parser",
   "repository": "jrutila/markdown-it-when",
   "license": "MIT",
@@ -10,14 +11,16 @@
   "scripts": {
     "lint": "eslint",
     "test": "mocha -r ts-node/register test/*.ts",
-    "build": "tsc",
+    "build": "microbundle",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
@@ -29,6 +32,7 @@
     "eslint": "^8.25.0",
     "markdown-it": "^13.0.1",
     "markdown-it-testgen": "^0.1.6",
+    "microbundle": "^0.15.1",
     "mocha": "^10.1.0",
     "ts-node": "^10.9.1",
     "typings": "^2.1.1"
