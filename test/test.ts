@@ -3,9 +3,14 @@ import 'mocha'
 import * as path from 'path'
 import generate from 'markdown-it-testgen'
 import when from '../src/'
+import md from 'markdown-it'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('default when', () => {
-  const md = require('markdown-it')()
+  const mdTest = md()
               .use(when, {
                 whenBlockOpen: function (tokens, idx, _options, env, slf) {
                   const token = tokens[idx]
@@ -23,5 +28,5 @@ describe('default when', () => {
                 }
               })
 
-  generate(path.join(__dirname, 'fixtures/default.txt'), md)
+  generate(path.join(__dirname, 'fixtures/default.txt'), mdTest)
 })
