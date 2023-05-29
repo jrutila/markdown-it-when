@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-when",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Plugin to add conditional text rendering to markdown-it markdown parser",
   "repository": "jrutila/markdown-it-when",
