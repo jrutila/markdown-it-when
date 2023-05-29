@@ -2,7 +2,7 @@
   "name": "markdown-it-when",
   "version": "1.0.0",
   "description": "Plugin to add conditional text rendering to markdown-it markdown parser",
-  "repository": "jrutila/markdown-it-ehen",
+  "repository": "jrutila/markdown-it-when",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
