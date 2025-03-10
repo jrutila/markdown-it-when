@@ -1,0 +1,17 @@
+Simple closing block
+.
+((when dragons))
+*content*
+((/when))
+.
+<n-when when="dragons">
+<p><em>content</em></p>
+</n-when>
+.
+
+Simple closing inline
+.
+There will be((when dragons)) *dragons* and((/when)) other creatures.
+.
+<p>There will be<n-when when="dragons"> <em>dragons</em> and</n-when> other creatures.</p>
+.

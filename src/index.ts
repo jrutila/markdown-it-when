@@ -72,6 +72,7 @@ export default function whenPlugin (md, options) {
 
       token        = state.push('when_block_close', 'p', -1)
       token.block  = true
+      token.meta   = { param: creg[1], phrase }
 
       state.parentType = old_parent
       state.lineMax = old_line_max
