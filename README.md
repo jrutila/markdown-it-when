@@ -43,7 +43,24 @@ Options:
     - __whenClose__ - optional, the render function for when close inline, NOTE! There's no good default rendered implemented, you have to provide something
 
 ## Contributing
-Please contribute. Check out the `test/fixtures/default.txt` file for the test cases. Create a test case following the [markdown-it-testgen](https://github.com/markdown-it/markdown-it-testgen) format. Then implement the feature and create a pull request.
-    
+Please contribute. 
+
+```bash
+$ pnpm install
+$ pnpm test
+```
+
+Check out the `test/fixtures/default.txt` file for the test cases. Create a test case following the [markdown-it-testgen](https://github.com/markdown-it/markdown-it-testgen) format. Then implement the feature and create a pull request.
+
+### Building
+```bash
+pnpm build
+```
+
+### Publishing
+```bash
+pnpm publish
+```
+
 ## License
  MIT (see LICENSE file)
