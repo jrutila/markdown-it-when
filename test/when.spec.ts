@@ -1,8 +1,7 @@
 'use strict'
-import 'mocha'
 import * as path from 'path'
 import generate from 'markdown-it-testgen'
-import when from '../src/'
+import when from '../src'
 import md from 'markdown-it'
 import { fileURLToPath } from 'url';
 
