@@ -3,7 +3,7 @@ export default function whenPlugin (md, options) {
 
   const phrases = options.phrases || [ 'when', 'until' ]
   const startRegex = options.startRegex || '\\(\\($0 ([^)]*?)\\)\\)'
-  const endRegex = options.startRegex || '\\(\\(\\/$0\\)\\)'
+  const endRegex = options.endRegex || '\\(\\(\\/$0\\)\\)'
 
   const whenBlockOpen = options.whenBlockOpen || function (tokens, idx, _options, env, slf) {
     const token = tokens[idx]
