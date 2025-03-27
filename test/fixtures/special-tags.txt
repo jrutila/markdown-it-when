@@ -1,0 +1,50 @@
+
+Simple when block
+.
+--when dragons--
+*content*
+--/when--
+.
+<p when="dragons">
+<p><em>content</em></p>
+</p>
+.
+
+When block with multiple paragraphs
+.
+--when dragons--
+*content*
+
+another **paragraph**
+--/when--
+.
+<p when="dragons">
+<p><em>content</em></p>
+<p>another <strong>paragraph</strong></p>
+</p>
+.
+
+Simple inline parser
+.
+There will be--when dragons-- *dragons* and--/when-- other creatures.
+.
+<p>There will be<span when="dragons"> <em>dragons</em> and</span> other creatures.</p>
+.
+
+Multiple inline whens with closing in the end
+.
+There will be no--when dragons-- *dragons* and--/when-- other creatures.--when roses-- There's some **roses**, too.--/when--
+.
+<p>There will be no<span when="dragons"> <em>dragons</em> and</span> other creatures.<span when="roses"> There's some <strong>roses</strong>, too.</span></p>
+.
+
+Inline when inside a block when
+.
+--when roses--
+There will be no--when dragons-- *dragons* and--/when-- other creatures.--when roses-- There's some **roses**, too.--/when--
+--/when--
+.
+<p when="roses">
+<p>There will be no<span when="dragons"> <em>dragons</em> and</span> other creatures.<span when="roses"> There's some <strong>roses</strong>, too.</span></p>
+</p>
+.

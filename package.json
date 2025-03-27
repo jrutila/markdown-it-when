@@ -11,7 +11,7 @@
   "author": "Juho Rutila",
   "scripts": {
     "lint": "eslint",
-    "test": "vitest run",
+    "test": "vitest",
     "build": "microbundle",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
