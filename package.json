@@ -8,16 +8,16 @@
   "source": ["src/index.ts", "src/list-item-plugin.ts"],
   "exports": {
     ".": {
-      "require": "./dist/markdown-it-when.cjs",
-      "import": "./dist/markdown-it-when.esm.js",
       "types": "./dist/index.d.ts",
-      "unpkg": "./dist/markdown-it-when.umd.js"
+      "unpkg": "./dist/markdown-it-when.umd.js",
+      "require": "./dist/markdown-it-when.cjs",
+      "import": "./dist/markdown-it-when.esm.js"
     },
     "./list-item-plugin": {
-      "require": "./dist/list-item-plugin.cjs",
-      "import": "./dist/list-item-plugin.esm.js",
       "types": "./dist/list-item-plugin.d.ts",
-      "unpkg": "./dist/list-item-plugin.umd.js"
+      "unpkg": "./dist/list-item-plugin.umd.js",
+      "require": "./dist/list-item-plugin.cjs",
+      "import": "./dist/list-item-plugin.esm.js"
     }
   },
   "author": "Juho Rutila",
