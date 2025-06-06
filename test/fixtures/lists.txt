@@ -1,0 +1,43 @@
+List without when
+.
+Here _be_:
+
+- trolls
+- other creatures
+.
+<p>Here <em>be</em>:</p>
+<ul>
+<li>trolls</li>
+<li>other creatures</li>
+</ul>
+.
+
+Simple list
+.
+Here _be_:
+
+- [[when dragons]] dragonics
+- other creatures ((when black))black((/when))
+.
+<p>Here <em>be</em>:</p>
+<ul>
+<li when="dragons">dragonics</li>
+<li>other creatures <span when="black">black</span></li>
+</ul>
+.
+
+More conditionals inside list item
+.
+Here _be_:
+
+- [[when dragons]] dragonics
+- [[when trolls]] ((when black))black((/when)) trolls
+- other creatures
+.
+<p>Here <em>be</em>:</p>
+<ul>
+<li when="dragons">dragonics</li>
+<li when="trolls"><span when="black">black</span> trolls</li>
+<li>other creatures</li>
+</ul>
+.

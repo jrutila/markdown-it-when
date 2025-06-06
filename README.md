@@ -42,6 +42,39 @@ Options:
     - __whenOpen__ - optional, the render function for when open inline, NOTE! There's no good default rendered implemented, you have to provide something
     - __whenClose__ - optional, the render function for when close inline, NOTE! There's no good default rendered implemented, you have to provide something
 
+### List item plugin (optional)
+
+The list item plugin for `markdown-it-when` is a plugin that allows you to conditionally render list items. For example:
+
+```
+- [[when dragons]] dragonics
+- other creatures ((when black))black((/when))
+```
+
+Will be rendered as:
+
+```
+<ul>
+<li when="dragons">dragonics</li>
+<li>other creatures <span when="black">black</span></li>
+</ul>
+```
+
+
+```js
+var md = require('markdown-it')()
+            .use(require('markdown-it-when/list-item-plugin')[, options]);
+```
+
+Options:
+- __options:__:
+    - __phrases__ - optional, what words are supported, default: `[ 'when', 'until' ]`
+    - __listRegex__ - optional, the regex for the list item, default: `'\\[\\[$0 ([^)]*?)\\]\\]'` matches anything like `[[phrase anything]]`. The `$0`is replaced with any of the phrases
+    - __whenListItemOpenRender__ - optional, the render function for when list item opens, defaults to `<li phrase="condition">`
+    - __whenListItemCloseRender__ - optional, the render function for when list item closes, defaults to `</li>`
+    - __whenListItemOpen__ - optional, if you want to fine-tune the list item open logic, you probably are good by using the `whenListItemOpenRender`
+    - __whenListItemClose__ - optional, if you want to fine-tune the list item close logic, you probably are good by using the `whenListItemCloseRender`
+
 ## Contributing
 Please contribute. 
 

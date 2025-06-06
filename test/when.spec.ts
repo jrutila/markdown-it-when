@@ -2,6 +2,7 @@
 import * as path from 'path'
 import generate from 'markdown-it-testgen'
 import when from '../src'
+import whenListItemPlugin from '../src/list-item-plugin'
 import md from 'markdown-it'
 import { fileURLToPath } from 'url';
 
@@ -50,4 +51,26 @@ describe('closing block to have the same phrase', () => {
               })
 
   generate(path.join(__dirname, 'fixtures/closing.txt'), mdTest)
+})
+
+describe('special list plugin to conditionally render list items', () => {
+  const mdTest = md()
+              .use(when, {
+                whenBlockOpen: function (tokens, idx, _options, env, slf) {
+                  const token = tokens[idx]
+                  return `<p ${token.meta.phrase}="${token.meta.param}">\n`
+                },
+                whenBlockClose: function (tokens, idx, _options, env, slf) {
+                  return `</p>\n`
+                },
+                whenOpen: function (tokens, idx, _options, env, slf) {
+                  const token = tokens[idx]
+                  return `<span ${token.meta.phrase}="${token.meta.param}">`
+                },
+                whenClose: function (tokens, idx, _options, env, slf) {
+                  return `</span>`
+                }
+              })
+              .use(whenListItemPlugin)
+  generate(path.join(__dirname, 'fixtures/lists.txt'), mdTest)
 })
