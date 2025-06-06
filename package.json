@@ -5,9 +5,21 @@
   "description": "Plugin to add conditional text rendering to markdown-it markdown parser",
   "repository": "jrutila/markdown-it-when",
   "license": "MIT",
-  "main": "dist/index.cjs",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "source": ["src/index.ts", "src/list-item-plugin.ts"],
+  "exports": {
+    ".": {
+      "require": "./dist/markdown-it-when.cjs",
+      "import": "./dist/markdown-it-when.esm.js",
+      "types": "./dist/index.d.ts",
+      "unpkg": "./dist/markdown-it-when.umd.js"
+    },
+    "./list-item-plugin": {
+      "require": "./dist/list-item-plugin.cjs",
+      "import": "./dist/list-item-plugin.esm.js",
+      "types": "./dist/list-item-plugin.d.ts",
+      "unpkg": "./dist/list-item-plugin.umd.js"
+    }
+  },
   "author": "Juho Rutila",
   "scripts": {
     "lint": "eslint",
